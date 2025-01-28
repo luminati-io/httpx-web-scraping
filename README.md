@@ -103,7 +103,7 @@ from bs4 import BeautifulSoup
 
 In this example, the target page will be the “[Quotes to Scrape](https://quotes.toscrape.com/)” site:
 
-![The Quotes To Scrape homepage](https://brightdata.com/wp-content/uploads/2025/01/image-70-1024x493.png)
+![The Quotes To Scrape homepage](https://github.com/luminati-io/httpx-web-scraping/blob/main/Images/image-70.png)
 
 Use HTTPX to retrieve the HTML of the homepage with the `get()` method:
 
@@ -260,7 +260,7 @@ python3 scraper.py
 
 A `quotes.csv` file will appear in the root folder of your project withthe following contents:
 
-![The CSV containing the scraped data](https://brightdata.com/wp-content/uploads/2025/01/image-71-1024x214.png)
+![The CSV containing the scraped data](https://github.com/luminati-io/httpx-web-scraping/blob/main/Images/image-71.png)
 
 ## HTTPX Web Scraping Advanced Features and Techniques
 
