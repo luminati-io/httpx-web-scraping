@@ -28,7 +28,7 @@ This guide explains how to use HTTPX, a powerful Python HTTP client, for web scr
 
 ## What Is HTTPX?
 
-[HTTPX](https://github.com/projectdiscovery/httpx) is a fully featured HTTP client for Python 3, built on top of the [`retryablehttp`](https://github.com/projectdiscovery/retryablehttp-go) library. It is built to deliver reliable performance even under heavy multithreading. HTTPX offers both synchronous and asynchronous APIs, supporting HTTP/1.1 and HTTP/2 protocols.
+[HTTPX](https://github.com/projectdiscovery/httpx) is a fully featured HTTP client for Python 3, built on top of the [`httpcore`](https://pypi.org/project/httpcore/) library. It is built to deliver reliable performance even under heavy multithreading. HTTPX offers both synchronous and asynchronous APIs, supporting HTTP/1.1 and HTTP/2 protocols.
 
 **Features**
 
