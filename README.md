@@ -142,7 +142,7 @@ Feed the HTML content to the BeautifulSoup constructor to parse it:
 
 ```python
 # Parse the HTML content using
-BeautifulSoup soup = BeautifulSoup(html, "html.parser")
+ soup = BeautifulSoup(html, "html.parser")
 ```
 
 The `soup` variable now holds the parsed HTML and exposes the methods to extract the data.
@@ -160,7 +160,7 @@ quote_elements = soup.find_all("div", class_="quote")
 
 # Loop through quotes and extract text, author, and tags
 for quote_element in quote_elements:
-    text = quote_element.find("span", class_="text").get_text().get_text().replace("“", "").replace("”", "")
+    text = quote_element.find("span", class_="text").get_text().replace("“", "").replace("”", "")
     author = quote_element.find("small", class_="author")
     tags = [tag.get_text() for tag in quote_element.find_all("a", class_="tag")]
 
@@ -431,17 +431,18 @@ To make asynchronous requests in HTTPX, initialize `AsyncClient` and use it to 
 import httpx
 import asyncio
 
-async def fetch_data():
+async def fetch(url):
     async with httpx.AsyncClient() as client:
-        # Make an async HTTP request
-        response = await client.get("https://httpbin.io/anything")
+        response = await client.get(url)
+        return response.text
 
-        # Extract the JSON response data and print it
-        response_data = response.json()
-        print(response_data)
+async def main():
+    urls = ["https://httpbin.io/anything"] * 5
+    responses = await asyncio.gather(*(fetch(url) for url in urls))
+    for response in responses:
+        print(response)
 
-# Run the async function
-asyncio.run(fetch_data())
+asyncio.run(main())
 ```
 
 The [`with`](https://docs.python.org/3/reference/compound_stmts.html#with) statement ensures the client is automatically closed when the block ends. Alternatively, if you manage the client manually, you can close it explicitly with `await client.close()`.
